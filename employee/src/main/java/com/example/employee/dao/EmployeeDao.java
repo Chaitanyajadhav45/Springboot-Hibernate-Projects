@@ -1,23 +1,24 @@
 package com.example.employee.dao;
 
 import com.example.employee.entity.Employee;
-import jakarta.transaction.Transactional;
 
 import java.util.List;
 
 public interface EmployeeDao {
 
-    public void save(Employee theEmployee);
+    void save(Employee theEmployee);
 
-    public Employee findById(int theId);
+    Employee findById(int theId);
 
-    public Employee findByPhoneNo(long contactInfo);
+    Employee findByPhoneNo(long contactInfo);
 
     List<Employee> fetchAll();
 
-    @Transactional
-    void update(int theId);
+    void updateSalary(int theId, double newSalary);
 
-    @Transactional
+    void updateDesignation(int theId, String newDesignation);
+
+    void updateContact(int theId, long newContact);
+
     void remove(int theId);
 }
